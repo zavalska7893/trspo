@@ -7,10 +7,6 @@ import matplotlib.pyplot as plt
 
 
 def count_pi(n):
-    """
-    Рахує кількість точок, що потрапили в коло,
-    з n випадкових точок у квадраті [-1;1] x [-1;1].
-    """
     counter = 0
     for _ in range(n):
         x = random.uniform(-1, 1)
@@ -21,10 +17,6 @@ def count_pi(n):
 
 
 def threading_pi(n, number_of_threads):
-    """
-    Обчислення π методом Монте-Карло з використанням потоків.
-    Не використовуються ніякі методи синхронізації, окрім join().
-    """
     start = time.time()
 
     points_per_thread = n // number_of_threads
@@ -53,10 +45,6 @@ def threading_pi(n, number_of_threads):
 
 
 def multiprocessing_pi(n, number_of_processes):
-    """
-    Обчислення π методом Монте-Карло з використанням multiprocessing.
-    Кожен процес отримує свою частину точок і працює паралельно на окремому ядрі.
-    """
     start = time.time()
 
     points_per_process = n // number_of_processes
